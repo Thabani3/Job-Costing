@@ -1,0 +1,7 @@
+<odoo>
+    <record id="action_job_costing_job" model="ir.actions.act_window">
+        <field name="name">Job Costing</field>
+        <field name="res_model">job_costing.job</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="job_costing_menu_root" name="Job Costing"/>
+    <menuitem id="job_costing_job_menu" name="Jobs" parent="job_costing_menu_root" action="job_costing.action_job_costing_job"/>
+</odoo>

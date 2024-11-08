@@ -1,0 +1,92 @@
+<odoo>
+    <record id="view_job_costing_job_form" model="ir.ui.view">
+        <field name="name">job.costing.job.form</field>
+        <field name="model">job_costing.job</field>
+        <field name="arch" type="xml">
+            <form string="Job Costing">
+                <sheet>
+                    <group>
+                        <field name="name" string="Job Name"/>
+                    </group>
+                    <notebook>
+                        <page string="Material Costs">
+                            <field name="material_cost_ids" mode="tree,form">
+                                <tree editable="bottom">
+                                    <field name="material_name" string="Material Name"/>
+                                    <field name="material_cost" string="Unit Cost"/>
+                                    <field name="quantity" string="Quantity"/>
+                                    <field name="total_material_cost" string="Total Cost"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="material_name" string="Material Name"/>
+                                        <field name="material_cost" string="Unit Cost"/>
+                                        <field name="quantity" string="Quantity"/>
+                                        <field name="total_material_cost" string="Total Cost" readonly="1"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Labour Costs">
+                            <field name="labour_cost_ids" mode="tree,form">
+                                <tree editable="bottom">
+                                    <field name="employee_id" string="Employee"/>
+                                    <field name="hourly_rate" string="Hourly Rate"/>
+                                    <field name="hours_worked" string="Hours Worked"/>
+                                    <field name="total_labour_cost" string="Total Cost"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="employee_id" string="Employee"/>
+                                        <field name="hourly_rate" string="Hourly Rate"/>
+                                        <field name="hours_worked" string="Hours Worked"/>
+                                        <field name="total_labour_cost" string="Total Cost" readonly="1"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Overheads">
+                            <field name="overhead_cost_ids" mode="tree,form">
+                                <tree editable="bottom">
+                                    <field name="overhead_amount" string="Overhead Amount"/>
+                                    <field name="activity_driver" string="Activity Driver"/>
+                                    <field name="predetermined_rate" string="Rate"/>
+                                    <field name="total_overhead_cost" string="Total Cost"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="overhead_amount" string="Overhead Amount"/>
+                                        <field name="activity_driver" string="Activity Driver"/>
+                                        <field name="predetermined_rate" string="Rate"/>
+                                        <field name="total_overhead_cost" string="Total Cost" readonly="1"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Subcontractor Costs">
+                            <field name="subcontractor_cost_ids" mode="tree,form">
+                                <tree editable="bottom">
+                                    <field name="subcontractor_name" string="Subcontractor Name"/>
+                                    <field name="service_cost" string="Service Cost"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="subcontractor_name" string="Subcontractor Name"/>
+                                        <field name="service_cost" string="Service Cost"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group>
+                        <field name="total_material_cost" readonly="1" string="Total Material Cost"/>
+                        <field name="total_labour_cost" readonly="1" string="Total Labour Cost"/>
+                        <field name="total_overhead_cost" readonly="1" string="Total Overhead Cost"/>
+                        <field name="total_subcontractor_cost" readonly="1" string="Total Subcontractor Cost"/>
+                        <field name="total_job_cost" readonly="1" string="Total Job Cost"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
